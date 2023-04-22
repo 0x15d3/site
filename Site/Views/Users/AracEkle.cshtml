@@ -1,0 +1,16 @@
+﻿@model Site.Models.AracKayit
+
+<form asp-controller="Users" asp-action="AracEkle" method="post">
+    <div class="form-group">
+        <label asp-for="Plaka">Plaka</label>
+        <input asp-for="Plaka" class="form-control" />
+        <span asp-validation-for="Plaka" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Marka">Marka</label>
+        <input asp-for="Marka" class="form-control" />
+        <span asp-validation-for="Marka" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    
+</form>

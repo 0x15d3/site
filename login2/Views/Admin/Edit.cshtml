@@ -1,0 +1,36 @@
+﻿@model UsersViewModel
+
+<h2>Edit User</h2>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Admin" asp-action="Edit">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DaireNo"></label>
+                <input asp-for="DaireNo" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Aidat"></label>
+                <input asp-for="Aidat" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

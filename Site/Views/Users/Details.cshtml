@@ -1,0 +1,35 @@
+﻿@model Site.Models.UserDetailsViewModel
+
+<h2>Kullanıcı Detayları</h2>
+
+<div>
+    <label>Mail:</label> @Model.User.Email
+</div>
+<div>
+    <label>Telefon Numarası:</label> @Model.User.TelefonNumarasi
+</div>
+<div>
+    <label>Daire No:</label> @Model.User.DaireNo
+</div>
+
+<h2>Aylik Aidatlar</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kullanıcı</th>
+            <th>Aidat Tarihi</th>
+            <th>Aidat Tutarı</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AylikAidatlar)
+        {
+            <tr>
+                <td>@item.User.ToString()</td>
+                <td>@item.Tarih.ToString("dd/MM/yyyy")</td>
+                <td>@item.Tutar</td>
+            </tr>
+        }
+    </tbody>
+</table>

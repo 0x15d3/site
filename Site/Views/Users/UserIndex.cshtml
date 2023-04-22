@@ -1,0 +1,57 @@
+﻿@model Site.Models.UserDetailsViewModel
+
+<h4>@Model.User.Email - Daire @Model.User.DaireNo - @Model.User.TelefonNumarasi</h4>
+
+<h2>Araçlar</h2>
+@if (Model.Araclar.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Plaka</th>
+                <th>Marka</th>
+                <th>Tarih</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var arac in Model.Araclar)
+            {
+                <tr>
+                    <td>@arac.Plaka</td>
+                    <td>@arac.Marka</td>
+                    <td>@arac.Tarih.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Kayıtlı araç yok.</p>
+}
+
+<h2>Aylık Aidatlar</h2>
+@if (Model.AylikAidatlar.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tarih</th>
+                <th>Tutar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var aidat in Model.AylikAidatlar)
+            {
+                <tr>
+                    <td>@aidat.Tarih.ToShortDateString()</td>
+                    <td>@aidat.Tutar.ToString("C2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Aidat kaydı yok.</p>
+}

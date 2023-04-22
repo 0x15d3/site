@@ -1,0 +1,33 @@
+﻿@model List<UsersViewModel>
+
+<h2>Users List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Email</th>
+            <th>Aidat</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserId</td>
+                <td>@user.Email</td>
+                <td>@user.Aidat</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Users", new { id = user.UserId })">Aidat Ekle</a> |
+                    <a href="@Url.Action("Details", "Users", new { id = user.UserId })">Aidatlar</a> |
+                    <a href="@Url.Action("AracDetails", "Users", new { id = user.UserId })">Araçlar</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<hr />
+<a href="@Url.Action("AdminAracEkle", "Users", new {})">Araç Ekle</a>
